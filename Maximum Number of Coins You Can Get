@@ -1,0 +1,18 @@
+import java.util.Arrays;
+
+class Solution {
+    public int maxCoins(int[] piles) {
+        // Step 1: Sort the piles
+        Arrays.sort(piles);
+        
+        int n = piles.length / 3;  // Bob gets the smallest n piles
+        int res = 0;
+        
+        // Step 2: Pick every second pile starting from index n
+        for (int i = n; i < piles.length; i += 2) {
+            res += piles[i];
+        }
+        
+        return res;
+    }
+}
